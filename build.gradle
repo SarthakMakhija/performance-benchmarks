@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    //https://github.com/melix/jmh-gradle-plugin
+    id 'me.champeau.gradle.jmh' version '0.5.0'
+}
+
+group 'org.learning.tech'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jmh {
+    humanOutputFile = project.file("${project.buildDir}/reports/jmh/human-readable.txt")
+    warmupIterations = 3
+    iterations = 3
+    fork = 3
+}
