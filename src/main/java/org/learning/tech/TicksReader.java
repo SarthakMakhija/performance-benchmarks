@@ -3,6 +3,7 @@ package org.learning.tech;
 import org.learning.tech.exception.TicksReadFailedException;
 import org.learning.tech.model.Tick;
 import org.learning.tech.model.Ticks;
+import org.learning.tech.validator.Validator;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -18,12 +19,16 @@ public class TicksReader {
         this.fileName = fileName;
     }
 
-    public Ticks read() {
+    public Ticks readAll() {
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             return new Ticks(ticksFrom(reader));
         } catch (IOException e) {
             throw new TicksReadFailedException(fileName, e);
         }
+    }
+
+    public Ticks readCleanUsing(Validator validator) {
+        return readAll().cleanUsing(validator);
     }
 
     private List<Tick> ticksFrom(BufferedReader reader) throws IOException {
@@ -33,7 +38,6 @@ public class TicksReader {
             ticks.add(new Tick(line));
             line = reader.readLine();
         }
-
         return ticks;
     }
 }
