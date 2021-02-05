@@ -12,7 +12,7 @@ class TicksReaderUnitTest {
 
     @Test
     void shouldThrowAnExceptionGivenFileDoesNotExist() {
-        String path = "src/test/resources/ticks-file-non-existing";
+        String path = "src/test/resources/ticks-non-existing";
         String absolutePath = new File(path).getAbsolutePath();
 
         TicksReader ticksReader = new TicksReader(absolutePath);
@@ -21,7 +21,7 @@ class TicksReaderUnitTest {
 
     @Test
     void shouldThrowAnExceptionWithAMessageContainingFileNameGivenFileDoesNotExist() {
-        String fileName = "ticks-file-non-existing";
+        String fileName = "ticks-non-existing";
         String path = "src/test/resources/" + fileName;
         String absolutePath = new File(path).getAbsolutePath();
 

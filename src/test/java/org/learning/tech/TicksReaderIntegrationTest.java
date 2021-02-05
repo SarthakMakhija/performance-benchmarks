@@ -15,7 +15,7 @@ class TicksReaderIntegrationTest {
 
     @Test
     void shouldReadAllTicks() {
-        String path = "src/test/resources/ticks-file";
+        String path = "src/test/resources/ticks";
         String absolutePath = new File(path).getAbsolutePath();
 
         TicksReader ticksReader = new TicksReader(absolutePath);
@@ -29,7 +29,7 @@ class TicksReaderIntegrationTest {
 
     @Test
     void shouldReadCleanTicks() {
-        String path = "src/test/resources/ticks-unclean-file";
+        String path = "src/test/resources/ticks-unclean";
         String absolutePath = new File(path).getAbsolutePath();
 
         TicksReader ticksReader = new TicksReader(absolutePath);
