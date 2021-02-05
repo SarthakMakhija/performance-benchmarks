@@ -34,6 +34,18 @@ Effectively,
 * our throughput requirement is: ```66,666.6666 ticks in one second```
 * our (average) response time requirement is: ```0.0000150 seconds for one tick```
 
+# Output
+| Benchmark | totalBenchmarkIterations | totalContentItemsToBeValidated | Mode | Cnt | Score | Error | Units
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| TicksReaderMesoBenchmark.readAllTicks | N/A | N/A | thrpt | 9 | 12922.777 ± | 3842.944 | ops/s
+| TicksReaderMesoBenchmark.readCleanTicks | N/A | N/A | thrpt | 9 | 4317.748 ± | 494.488 | ops/s
+| OptimizedAlphanumericValidatorMicroBenchmark.isNotValid | 1000000 | 10000 | thrpt | 9 | 6.197 ± | 0.936 | ops/s 
+| OptimizedAlphanumericValidatorMicroBenchmark.isValid | 1000000 | 10000 | thrpt | 9 | 2.060 ± | 0.208 | ops/s
+| UnoptimizedAlphanumericValidatorMicroBenchmark.isNotValid | 1000000 | 10000 | thrpt | 9 | 3.096 ± | 0.670 | ops/s
+| UnoptimizedAlphanumericValidatorMicroBenchmark.isValid | 1000000 | 10000 | thrpt | 9 | 1.384 ± | 0.325 | ops/s
+| TicksReaderMesoBenchmark.readAllTicks | N/A | N/A | avgt | 9 | ≈ 10⁻⁴ | | s/op
+| TicksReaderMesoBenchmark.readCleanTicks | N/A | N/A | avgt | 9 | ≈ 10⁻⁴ | | s/op
+
 # Plugin for JMH
 This project uses ```JMH``` with ```me.champeau.gradle.jmh``` as the gradle plugin for running benchmarks.
 
