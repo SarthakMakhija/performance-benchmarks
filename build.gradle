@@ -25,4 +25,5 @@ jmh {
     warmupIterations = 3
     iterations = 3
     fork = 3
+    benchmarkParameters = ["benchmarkFileRootPath": [project.property("benchmarkFileRootPath") as String]]
 }
