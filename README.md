@@ -42,3 +42,5 @@ This project uses ```me.champeau.gradle.jmh``` plugin for running benchmarks.
 which is prepended to ```src/jmh/resources/ticks-benchmark```.
 
 ```./gradlew jmh -PbenchmarkFileRootPath=/projects/performance-benchmarks/```
+
+assuming this project is placed under ```/projects/performance-benchmarks/``` 
