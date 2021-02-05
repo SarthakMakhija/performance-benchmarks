@@ -35,7 +35,7 @@ Effectively,
 * our (average) response time requirement is: ```0.0000150 seconds for one tick```
 
 # Plugin for JMH
-This project uses ```me.champeau.gradle.jmh``` plugin for running benchmarks.
+This project uses ```JMH``` with ```me.champeau.gradle.jmh``` as the gradle plugin for running benchmarks.
 
 # How to run
 ```TicksReaderMesoBenchmark``` reads a benchmark file from ```src/jmh/resources/ticks-benchmark``` location. It needs the root project path
