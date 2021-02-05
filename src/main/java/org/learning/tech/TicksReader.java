@@ -6,24 +6,27 @@ import org.learning.tech.model.Ticks;
 import org.learning.tech.validator.Validator;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class TicksReader {
 
-    private final String fileName;
+    private final Path filePath;
 
     public TicksReader(String fileName) {
-        this.fileName = fileName;
+        this.filePath = Paths.get(fileName);
     }
 
     public Ticks readAll() {
-        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+        try (BufferedReader reader = Files.newBufferedReader(filePath, StandardCharsets.UTF_8)) {
             return new Ticks(ticksFrom(reader));
         } catch (IOException e) {
-            throw new TicksReadFailedException(fileName, e);
+            throw new TicksReadFailedException(filePath.getFileName().toString(), e);
         }
     }
 
@@ -32,12 +35,6 @@ public class TicksReader {
     }
 
     private List<Tick> ticksFrom(BufferedReader reader) throws IOException {
-        List<Tick> ticks = new ArrayList<>();
-        String line = reader.readLine();
-        while (line != null) {
-            ticks.add(new Tick(line));
-            line = reader.readLine();
-        }
-        return ticks;
+        return reader.lines().map(Tick::new).collect(Collectors.toList());
     }
 }
