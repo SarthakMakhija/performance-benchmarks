@@ -1,12 +1,9 @@
-Benchmark                                                                                           (benchmarkFileRootPath)  (totalBenchmarkIterations)  (totalContentItemsToBeValidated)   Mode  Cnt      Score      Error  Units
-o.l.t.reader.TicksReaderMesoBenchmark.readAllTicks                         /Users/msarthak/projects/performance-benchmarks/                         N/A                               N/A  thrpt    9  12922.777 ± 3842.944  ops/s
-o.l.t.reader.TicksReaderMesoBenchmark.readCleanTicks                       /Users/msarthak/projects/performance-benchmarks/                         N/A                               N/A  thrpt    9   4317.748 ±  494.488  ops/s
-
-o.l.t.validator.OptimizedAlphanumericValidatorMicroBenchmark.isNotValid                                                 N/A                     1000000                             10000  thrpt    9      6.197 ±    0.936  ops/s
-o.l.t.validator.OptimizedAlphanumericValidatorMicroBenchmark.isValid                                                    N/A                     1000000                             10000  thrpt    9      2.060 ±    0.208  ops/s
-
-o.l.t.validator.UnoptimizedAlphanumericValidatorMicroBenchmark.isNotValid                                               N/A                     1000000                             10000  thrpt    9      3.096 ±    0.670  ops/s
-o.l.t.validator.UnoptimizedAlphanumericValidatorMicroBenchmark.isValid                                                  N/A                     1000000                             10000  thrpt    9      1.384 ±    0.325  ops/s
-
-o.l.t.reader.TicksReaderMesoBenchmark.readAllTicks                         /Users/msarthak/projects/performance-benchmarks/                         N/A                               N/A   avgt    9     ≈ 10⁻⁴              s/op
-o.l.t.reader.TicksReaderMesoBenchmark.readCleanTicks                       /Users/msarthak/projects/performance-benchmarks/                         N/A                               N/A   avgt    9     ≈ 10⁻⁴              s/op
+Benchmark                                                                                           (benchmarkFileRootPath)   Mode  Cnt        Score        Error  Units
+o.l.t.reader.TicksReaderMesoBenchmark.readAllTicks                         /Users/msarthak/projects/performance-benchmarks/  thrpt    9    16184.669 ±    533.221  ops/s
+o.l.t.reader.TicksReaderMesoBenchmark.readCleanTicks                       /Users/msarthak/projects/performance-benchmarks/  thrpt    9     4888.107 ±     32.693  ops/s
+o.l.t.validator.OptimizedAlphanumericValidatorMicroBenchmark.isNotValid                                                 N/A  thrpt    9  8064525.491 ± 157267.050  ops/s
+o.l.t.validator.OptimizedAlphanumericValidatorMicroBenchmark.isValid                                                    N/A  thrpt    9  3224136.363 ± 262697.340  ops/s
+o.l.t.validator.UnoptimizedAlphanumericValidatorMicroBenchmark.isNotValid                                               N/A  thrpt    9  3749942.487 ± 497218.658  ops/s
+o.l.t.validator.UnoptimizedAlphanumericValidatorMicroBenchmark.isValid                                                  N/A  thrpt    9  2190138.401 ± 166153.520  ops/s
+o.l.t.reader.TicksReaderMesoBenchmark.readAllTicks                         /Users/msarthak/projects/performance-benchmarks/   avgt    9       ≈ 10⁻⁴                s/op
+o.l.t.reader.TicksReaderMesoBenchmark.readCleanTicks                       /Users/msarthak/projects/performance-benchmarks/   avgt    9       ≈ 10⁻⁴                s/op
