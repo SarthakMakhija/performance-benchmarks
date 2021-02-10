@@ -34,7 +34,7 @@ Effectively,
 * our throughput requirement is: ```66,666.6666 ticks in one second```
 * our (average) response time requirement is: ```0.0000150 seconds for one tick```
 
-# Output (of one run)
+# Output (of latest run)
 Present in results.txt 
 
 # Plugin for JMH
